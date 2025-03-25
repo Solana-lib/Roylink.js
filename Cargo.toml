@@ -1,0 +1,25 @@
+[package]
+name = "direct_ring_buffer"
+version = "0.2.1"
+edition = "2021"
+authors = ["Seiji Ainoguchi <seiji.ainoguchi@gmail.com>"]
+description = "A high-performance, lock-free ring buffer for single-producer, single-consumer scenarios."
+homepage = "https://github.com/ain1084/direct_ring_buffer"
+repository = "https://github.com/ain1084/direct_ring_buffer"
+documentation = "https://docs.rs/direct_ring_buffer"
+readme = "README.md"
+keywords = ["ring-buffer", "lock-free", "spsc"]
+categories = ["data-structures", "concurrency"]
+license = "MIT OR Apache-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[dev-dependencies]
+rand = "0.8.5"
+criterion = "0.5.1"
+
+[[bench]]
+name = "benchmarks"
+harness = false
