@@ -11,6 +11,9 @@ Roylink.js is a JavaScript bridge for secure server-exchange communication, enab
 
 ```bash
 npm install roylink.js
+```
+
+## Installation
 
 ## Usage
 ```javascript
@@ -22,3 +25,4 @@ connection.connect(serverConfig);
 connection.on('transaction', (data) => {
   console.log('Transaction data:', data);
 });
+```
