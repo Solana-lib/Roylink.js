@@ -13,8 +13,6 @@ Roylink.js is a JavaScript bridge for secure server-exchange communication, enab
 npm install roylink.js
 ```
 
-## Installation
-
 ## Usage
 ```javascript
 const Roylink = require('roylink.js');
