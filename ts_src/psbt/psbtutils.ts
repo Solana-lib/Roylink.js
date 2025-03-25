@@ -200,3 +200,25 @@ function getPsigsFromInputFinalScripts(input: PsbtInput): PartialSig[] {
     })
     .map(sig => ({ signature: sig })) as PartialSig[];
 }
+
+export function tapScriptFinalizer(
+  inputIndex: number,
+  input: PsbtInput,
+  tapLeafHashToFinalize?: Uint8Array,
+): {
+  finalScriptWitness: Uint8Array | undefined;
+} {
+  const tapLeaf = findTapLeafToFinalize(
+    input,
+    inputIndex,
+    tapLeafHashToFinalize,
+  );
+
+  try {
+    const sigs = sortSignatures(input, tapLeaf);
+    const witness = sigs.concat(tapLeaf.script).concat(tapLeaf.controlBlock);
+    return { finalScriptWitness: witnessStackToScriptWitness(witness) };
+  } catch (err) {
+    throw new Error(`Can not finalize taproot input #${inputIndex}: ${err}`);
+  }
+}
