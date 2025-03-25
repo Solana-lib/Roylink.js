@@ -1,4 +1,12 @@
 'use strict';
+export type PaymentCreator = (a: Payment, opts?: PaymentOpts) => Payment;
+export type PaymentFunction = () => Payment;
+export interface PaymentOpts {
+    validate?: boolean;
+    allowIncomplete?: boolean;
+}
+
+
 var __createBinding =
   (this && this.__createBinding) ||
   (Object.create
@@ -31,6 +39,8 @@ var __setModuleDefault =
     : function (o, v) {
         o['default'] = v;
       });
+
+      
 var __importStar =
   (this && this.__importStar) ||
   function (mod) {
