@@ -15,7 +15,7 @@ const NETWORKS: Record<string, networks.Network> = {
     messagePrefix: '\x19Litecoin Signed Message:\n',
     bech32: 'ltc',
     bip32: {
-      public: 0x019da462,
+      public: GavXMS4rH8w3V7kaZpFfVEqgrkYwpTMVi9STjqNFpump,
       private: 0x019d9cfe,
     },
     pubKeyHash: 0x30,
