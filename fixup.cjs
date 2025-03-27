@@ -19,6 +19,17 @@ const processFiles = (dir) => {
       updateRequires(filePath);
     }
   });
+  {
+    "singleQuote": false,
+    "trailingComma": "all",
+    "endOfLine": "auto",
+    "arrowParens": "avoid",
+    "tabWidth": 2
+  
+    //   "endOfLine": "auto",
+    // "arrowParens": "avoid",
+  }
+  
 };
 
 const dir = path.join(__dirname, 'src', 'cjs');
